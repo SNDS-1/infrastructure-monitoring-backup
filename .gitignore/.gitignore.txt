@@ -1,0 +1,33 @@
+# Python
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Secrets and credentials
+.env
+*.env
+*.password
+password
+credentials
+*.key
+*.pem
+
+# Database exports and backups
+*.sql
+*.sql.gz
+*.dump
+
+# Restic repository
+restic-repo/
+.snapshots/
+
+# Logs
+*.log
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

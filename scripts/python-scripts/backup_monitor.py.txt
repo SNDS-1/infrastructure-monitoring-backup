@@ -1,0 +1,45 @@
+import subprocess
+import json
+import sys
+import os
+
+# Vérifier les droits administrateur
+if os.geteuid() != 0:
+    print("ERROR: Run this script with sudo.")
+    sys.exit(1)
+
+# Charger la configuration Restic et récupérer les snapshots
+command = "source /root/.config/restic/env && restic snapshots --json"
+
+result = subprocess.run(
+    ["bash", "-c", command],
+    capture_output=True,
+    text=True
+)
+
+# Vérifier le résultat de la commande Restic
+if result.returncode != 0:
+    print("ERROR: Unable to access the Restic repository.")
+    print(result.stderr)
+    sys.exit(1)
+
+# Lire les données JSON
+snapshots = json.loads(result.stdout)
+
+# Vérifier la présence de sauvegardes
+if not snapshots:
+    print("WARNING: No backup snapshot found.")
+    sys.exit(1)
+
+# Identifier le snapshot le plus récent
+latest = max(snapshots, key=lambda item: item.get("time", ""))
+
+# Afficher le résultat
+snapshot_id = latest.get("short_id") or latest.get("id", "unknown")[:8]
+
+print("===== RESTIC BACKUP MONITOR =====")
+print(f"Total snapshots: {len(snapshots)}")
+print(f"Latest snapshot ID: {snapshot_id}")
+print(f"Backup date: {latest.get('time', 'Unknown')}")
+print(f"Hostname: {latest.get('hostname', 'Unknown')}")
+print("STATUS: OK - Restic snapshots are available.")
