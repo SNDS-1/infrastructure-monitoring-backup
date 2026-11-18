@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is the second phase of a broader IT infrastructure project. It builds upon the infrastructure designed and deployed in [Project 1](Lab-active-directory-opnsense), extending its capabilities through centralized monitoring, alert management, encrypted backups, data restoration procedures and Python-based automation.
+This project is the second phase of a broader IT infrastructure project. It builds upon the infrastructure designed and deployed in [Project 1](Lab-Active-Directory-Opnsense), extending its capabilities through centralized monitoring, alert management, encrypted backups, data restoration procedures and Python-based automation.
 
 While the first project focused on establishing the company's virtualized IT infrastructure, this second phase focuses on its operational monitoring, reliability, data protection and automation.
 
