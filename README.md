@@ -2,11 +2,9 @@
 
 ## Project Overview
 
-This project consists of designing and implementing a virtualized IT infrastructure representative of a small or medium-sized business (SME).
+This project is the second phase of a broader IT infrastructure project. It builds upon the infrastructure designed and deployed in [Project 1](Lab-active-directory-opnsense), extending its capabilities through centralized monitoring, alert management, encrypted backups, data restoration procedures and Python-based automation.
 
-The main objective is to deploy a functional environment combining network security, infrastructure monitoring, alerting, encrypted backups, restoration procedures and Python-based automation.
-
-The lab was built using several virtual machines and network segments. It provides a practical environment to configure infrastructure services, monitor their availability and resources, simulate failures, and test data recovery procedures.
+While the first project focused on establishing the company's virtualized IT infrastructure, this second phase focuses on its operational monitoring, reliability, data protection and automation.
 
 ## Project Objectives
 
